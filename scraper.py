@@ -1,6 +1,7 @@
 import scraperwiki
 import time
 import requests
+import sys
 
 expected_string = "Hassle-free web scraping."
 
@@ -18,6 +19,8 @@ if not expected_string in r.text:
 
 # Write out to the sqlite database using scraperwiki library
 scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
+
+sys.stderr.write("First a little test message to stderr\n")
 
 for i in range(1, 6):
     print "%i..." % i
